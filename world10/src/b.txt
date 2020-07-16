@@ -1,0 +1,149 @@
+public static String[] makeDirName() {
+
+		int[] arr = Utils.getDateInfo();
+
+		
+
+		String yearPath = File.separator+arr[0];
+
+		String monthPath = yearPath+File.separator+String.format("%02d", arr[1]);
+
+		String datePath = monthPath+ File.separator+String.format("%02d", arr[2]);
+
+		
+
+		String[] paths = {yearPath, monthPath, datePath};
+
+		
+
+		return paths;
+
+	}
+
+	
+
+	
+
+	public static int[] getDateInfo() {
+
+		Calendar cal = Calendar.getInstance();
+
+		
+
+		int year = cal.get(Calendar.YEAR);
+
+		int month = cal.get(Calendar.MONTH)+1;
+
+		int date = cal.get(Calendar.DATE);
+
+		
+
+		int[] arr = {year, month, date};
+
+		
+
+		return arr;
+
+	}
+
+	
+
+	public static String saveFile(String originalName, 
+
+									MultipartFile file, 
+
+									String uploadPath) throws Exception {
+
+		String newName = Utils.makeNewName(originalName);
+
+		String datePath = Utils.makeDir(uploadPath);
+
+		
+
+		File target = new File(uploadPath+datePath, newName); 
+
+		 
+
+		FileCopyUtils.copy(file.getBytes(), target);
+
+		
+
+		boolean isimgFile = isImg(originalName);
+
+		
+
+		if(isimgFile) {
+
+			System.out.println("섬네일을 만듦");
+
+		}else {
+
+			System.out.println("쎔네일을 안 만듦");
+
+			
+
+		}
+
+		
+
+		
+
+		
+
+		
+
+		
+
+		return datePath+File.separator+newName;
+
+	}
+
+	
+
+	
+
+	public static boolean isImg(String filename) {
+
+		
+
+		int idx = filename.lastIndexOf(".");
+
+		String format = filename.substring(idx+1);
+
+		
+
+		Map<String, MediaType> map = new HashMap<String, MediaType>();
+
+		map.put("JPG", MediaType.IMAGE_JPEG);
+
+		map.put("JPEG", MediaType.IMAGE_JPEG);
+
+		map.put("PNG", MediaType.IMAGE_PNG);
+
+		map.put("GIF", MediaType.IMAGE_GIF);
+
+		
+
+		MediaType mType = map.get(format.toUpperCase());
+
+		if(mType != null) {
+
+			return true;
+
+		}else {
+
+			return false;
+
+		}
+
+		
+
+		
+
+		
+
+		
+
+	}
+
+	

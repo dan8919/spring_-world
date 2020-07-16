@@ -1,0 +1,46 @@
+public static String saveFile(String originalName,MultipartFile file,String uploadPath)throws Exception {
+		
+		String newName = Utils.makeNewName(originalName);
+		
+		String datePath=Utils.makeDir(uploadPath);   //\2020\07\09   추가 두번째날(해당날자에 대응되는 폴더에 저장)
+		
+		File target = new File(uploadPath+datePath, newName );// 추가 두번째날(해당날자에 대응되는 폴더에 저장)
+		FileCopyUtils.copy(file.getBytes(), target);//target의 자리에는 file객체 대신 문자열을 직접 입력해도 상관없다.
+		
+		
+		boolean isimgFile=isImg(originalName);
+		
+		if(isimgFile) {
+			System.out.println("썸네일 만듦");
+		}else {
+			System.out.println("썸네일을 안 만듦");
+		}
+		
+		
+		return datePath+File.separator+newName;		
+	}
+	
+	
+	public static boolean isImg(String filename) {
+		
+		int idx=filename.lastIndexOf(".");
+		String  format=filename.substring(idx+1);
+		
+		//spring famewor 의 mediatype
+		
+		Map<String,MediaType>=new HashMap<String,MediaType>();
+		map.put("JPEG",MediaType.IMAGE_JPEG);
+		mao.put("JPG",MediaType.IMAGE_GIF);
+		
+		MediaType mType=map.get(format.toUpperCase());
+		
+		if(mType!=null) {
+			return true;
+		}else {
+			return false;
+			
+		}
+		
+		
+		
+	}
