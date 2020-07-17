@@ -52,9 +52,9 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
-		model.addAttribute("serverTime", "안녕하세요");
+		model.addAttribute("serverTime", "�븞�뀞�븯�꽭�슂");
 
 		return "home";
-	}
+	}//안녕2
 
 }
