@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 
 	//안녕5
+	//안녕6
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	/**
