@@ -22,6 +22,7 @@ public class HomeController {
 
 	//안녕5
 	//안녕6
+	//안녕7
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	/**
