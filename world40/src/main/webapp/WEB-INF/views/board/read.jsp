@@ -507,9 +507,9 @@
 			
 
 			
-
+/* .replymodify는 동적으로 생성되었는데 이것의 상위 정적으로 생성된 애를  선택  즉#replies */
 			$("#replies").on("click", ".replymodify", function(){
-
+/* 클릭당하고 있는애가 $(this)여기에선 .replymodify */
 				var rno = $(this).attr("data-rno");
 
 				var replyer = $(this).attr("data-name");
