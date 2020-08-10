@@ -16,19 +16,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 //수정test5
-<<<<<<< HEAD
 //수정 tes5
-=======
+
 //수정 t
->>>>>>> 8b67c5e6db1f3eef837f2d2730abc0c3a24949f9
+
 //수정 test5
 //수정 test5
 //수정 test5
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 8b67c5e6db1f3eef837f2d2730abc0c3a24949f9
 
 
 /**
