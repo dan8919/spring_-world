@@ -15,12 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-//수정test6
-//수정 tes6
-//수정 test6
-//수정 test6
-//수정 test6
 
+//수정 test5
+//수정 test5
+//수정 test5
 
 
 
