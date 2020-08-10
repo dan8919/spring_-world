@@ -14,8 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 //수정test1
-//수정 test2 git
-//수정 test3 git
+//수정 test2 
+//수정 test3
 //수정 test4
 
 /**
