@@ -18,7 +18,8 @@
 </head>
 <body>
 <button>at2 test</button>
-
+<p1>123</p1>
+<p></p>
 
 <script type="text/javascript">
 var arr=['hello','world','good','morning'];
@@ -40,6 +41,8 @@ $("button").click(function(){
 			 },
 			 success:function(result){
 				 console.log(result);
+				 console.log(typeof result);
+				 $('p').text(result)
 				 },
 				 error:function(request,status,error){
 					 console.log(error);

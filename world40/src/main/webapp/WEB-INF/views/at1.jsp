@@ -41,7 +41,7 @@ $("button").click(function(){
 		
 				console.log(result);
 ////????
-				$("p").text(result);
+				$('p').text(result);
 			
 				}
 

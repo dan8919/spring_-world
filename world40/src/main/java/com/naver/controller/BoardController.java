@@ -58,7 +58,7 @@ public class BoardController {
 		
 		//???????????????????????????????????????
 		return "redirect:/board/read/"+vo.getBno();
-		//+vo.getBno();   (해당 bno가 없으면 수정후 상세페이지를 찾을 수 없음)
+		//+vo.getBno();   (�빐�떦 bno媛� �뾾�쑝硫� �닔�젙�썑 �긽�꽭�럹�씠吏�瑜� 李얠쓣 �닔 �뾾�쓬)
 	}
 	
 	@RequestMapping(value="/update/{bno}",method=RequestMethod.GET)
@@ -72,11 +72,11 @@ public class BoardController {
 	public String read(Model model,@PathVariable("bno") int bno) {
 		BoardVO vo=bService.read(bno);
 		model.addAttribute("vo", vo);
-		// void 로 하면 안됨? void로 하면 board/read/5.jsp 로 감. 현재 read.jsp밖에 없기때문에 404에러 메시지 뜸.
+		// void 濡� �븯硫� �븞�맖? void濡� �븯硫� board/read/5.jsp 濡� 媛�. �쁽�옱 read.jsp諛뽰뿉 �뾾湲곕븣臾몄뿉 404�뿉�윭 硫붿떆吏� �쑙.
 		return "board/read";
 	}
 	
-	//페이징 처리
+	//�럹�씠吏� 泥섎━
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void list(Model model,String  curPage) {
 		//System.out.println("::::::::::::::::::::::::::::::::::::::::::::");
@@ -93,18 +93,23 @@ public class BoardController {
 		
 		 to = bService.list(to);
 		 
+		 System.out.println(to.getBeginPageNum());
+		 
+		 
 		model.addAttribute("to", to);
 		model.addAttribute("list", to.getList());
 	}
 	
-	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public String insert(BoardVO vo) {
-		
-		bService.insert(vo);
-		
-		
-		return "redirect:/board/list";
-	}
+	
+	  @RequestMapping(value = "/insert", method = RequestMethod.POST) public String
+	   insert(BoardVO vo) {
+	 
+	   bService.insert(vo);
+	  
+	 
+	   return "redirect:/board/list"; }
+	 
+	 
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public void insert() {

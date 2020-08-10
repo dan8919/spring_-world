@@ -19,12 +19,12 @@ import kr.co.service.MemberService;
 
 @Controller
 @RequestMapping("member")  
-//member/insert ,member/select이렇게 나옴
+//member/insert ,member/select�씠�젃寃� �굹�샂
 
 
-//배열 형태로 넣음
+//諛곗뿴 �삎�깭濡� �꽔�쓬
 //@SessionAttributes({"id","pw"})
-//모델에 login이라는 객체가 바인등 되어 있으면 sesion에 저장 하라
+//紐⑤뜽�뿉 login�씠�씪�뒗 媛앹껜媛� 諛붿씤�벑 �릺�뼱 �엳�쑝硫� sesion�뿉 ���옣 �븯�씪
 @SessionAttributes({"login"})
 public class MemeberController {
 
@@ -39,18 +39,19 @@ public class MemeberController {
 		return "redirect:/member/list";
 	}
 	
-	//session만들기 보다는 또다른 인터셉터 만들면 좋음
+	//session留뚮뱾湲� 蹂대떎�뒗 �삉�떎瑜� �씤�꽣�뀎�꽣 留뚮뱾硫� 醫뗭쓬
 	@RequestMapping(value = "/loginpost",method = RequestMethod.POST)
 	public String loginpost(LoginDTO login,Model model,HttpSession session) {
-		//DB연동
+		//DB�뿰�룞
 		MemberDTO dto=memberService.loginpost(login);
 		
 		
 		if(dto!=null) {
 			model.addAttribute("login", dto);
 			
-			//
+			
 			String path=(String) session.getAttribute("path");
+			System.out.println(path);
 			if(path !=null) {
 				return "redirect:"+path;
 			}
@@ -91,7 +92,7 @@ public class MemeberController {
 	}
 	
 	
-	//왜 post 방식으로?
+	//�솢 post 諛⑹떇�쑝濡�?
 	@RequestMapping(value="/update",method=RequestMethod.POST)
 	public String update(MemberDTO dto) {
 		memberService.update(dto);

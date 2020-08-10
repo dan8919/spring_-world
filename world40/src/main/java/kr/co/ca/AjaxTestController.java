@@ -22,11 +22,11 @@ public class AjaxTestController {
 	
 	
 	
-	//에이작스 통신을 할때
+	//�뿉�씠�옉�뒪 �넻�떊�쓣 �븷�븣
 	@ResponseBody
 	@RequestMapping(value="at1",method=RequestMethod.POST)
 	public String at1(String msg) {
-		//msg at1.jsp에서 msg는hello 라고 함
+		//msg at1.jsp�뿉�꽌 msg�뒗hello �씪怨� �븿
 		return msg+"!!!";
 	}
 
@@ -63,7 +63,7 @@ public class AjaxTestController {
 	@ResponseBody
 	@RequestMapping(value="/at3",method=RequestMethod.POST)
 	public MemberDTO at3(MemberDTO dto) {
-		
+		System.out.println(dto.getId());
 		return dto;
 		
 	}
@@ -81,12 +81,13 @@ public class AjaxTestController {
 	public List<Map<String,Object>> at4(@RequestParam Map<String,Object> map)throws Exception {
 		String jsonStr=map.get("listStr").toString();
 		
-		//문자열로 바꿔씀
+		//臾몄옄�뿴濡� 諛붽퓭��
 		ObjectMapper mapper=new ObjectMapper();
+		//readValue는 ObjectMapper함수  Key 값을 java 클래스 
 		List<Map<String,Object>> list=mapper.readValue(jsonStr, new TypeReference<ArrayList<Map<String,Object>>>() {
 		});
 		
-		for(Map<String,Object>m:list) {
+		for(Map<String,Object> m:list) {
 			System.out.println(";;;;;;;;;;;;;;;;;;;;;;;;;;;;");
 			System.out.println(m.get("id"));
 			System.out.println(m.get("name"));
