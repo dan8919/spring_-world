@@ -20,7 +20,7 @@ import kr.co.service.ReplyService;
 public class MyRestController {
 	@Inject
 	private ReplyService rService;
-	//delete 삭제
+	//delete �궘�젣
 	@RequestMapping(value="/replies",method = RequestMethod.DELETE)
 	public String delete(@RequestBody ReplyVO vo) {
 		
@@ -31,9 +31,10 @@ public class MyRestController {
 		return "fail";
 	}
 	
-	//put 수정
+	//put �닔�젙
 	@RequestMapping(value="/replies/{rno}",method=RequestMethod.PUT)
 	public String Update(@PathVariable("rno") int rno,@RequestBody ReplyVO vo) {
+		System.out.println(vo);
 		vo.setRno(rno);
 		int i=rService.update(vo);
 		System.out.println(rno);
@@ -46,14 +47,14 @@ public class MyRestController {
 		return "fail";
 		
 	}
-	//GET조회
+	//GET議고쉶
 	@RequestMapping(value = "/replies/all/{bno}",method = RequestMethod.GET)
 	public List<ReplyVO> list(@PathVariable("bno") int bno){
 		List<ReplyVO> list=rService.list(bno);
 		return list;
 	}
 	
-	//post 생성
+	//post �깮�꽦
 	@RequestMapping(value="/replies",method=RequestMethod.POST)
 	public String insert(@RequestBody ReplyVO vo) {
 		int i=rService.insert(vo);

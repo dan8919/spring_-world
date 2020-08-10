@@ -41,16 +41,17 @@ $("body").on("click","button",function(){
 			},
 		dataType:'text',
 		data:JSON.stringify({
-                         test1:test1,
+                         tes:test1,
                          test2:test2
 			
 			}),
 			success:function(result){
 				console.log(result);
+				console.log(typeof result)
 
 				var obj=JSON.parse(result);
 
-				console.log(obj["test1"]);
+				console.log(obj["tes"]);
 				},
 				error:function(request,status,error){
 					console.log(error);

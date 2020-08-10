@@ -20,8 +20,30 @@
 <title>Insert title here</title>
 </head>
 <body>
+123
+<p></p>
+
 	<button>rt1</button>
- 
+	<script type="text/javascript">
+	
+	$.getJSON("/rt5", function(data){
+
+		 console.log(data);
+
+	    $("p").text(data.name);
+
+		
+
+		
+
+
+		
+
+	});
+
+	</script>
+	
+<!-- 
 <p class="result"></p>
 <p class="test1"></p>
 	<script type="text/javascript">
@@ -70,6 +92,6 @@ $(document).ready(function(){
 
 	
 });
-</script> 
+</script> -->
 </body>
 </html>

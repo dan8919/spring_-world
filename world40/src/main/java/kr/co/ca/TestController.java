@@ -42,4 +42,9 @@ public class TestController {
 		
 		model.addAttribute("list",list);
 	}
+	@RequestMapping(value="rtt5",method=RequestMethod.GET)
+	public String rt5() {
+		return "rt5";
+	}
+	
 }

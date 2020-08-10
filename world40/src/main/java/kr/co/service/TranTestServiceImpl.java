@@ -67,8 +67,8 @@ public class TranTestServiceImpl implements TranTestService{
 
 		bDao.insert(vo);
 
-		System.out.println(4/0);
-
+		//System.out.println(4/0);
+         System.out.println(vo);
 		
 
 		bDao.update(vo);

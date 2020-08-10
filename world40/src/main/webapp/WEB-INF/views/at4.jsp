@@ -58,7 +58,7 @@ $("button").click(function(){
 
              for(var i=0;i<obj.length;i++){
 /* x 멤버변수 */
-                 for(x in obj[i]){
+                 for(x in obj[i]:){
                      console.log(x);
                      console.log(obj[i][x]);
                      console.log(":::::::::::::::::::::::::::::::::")

@@ -33,7 +33,7 @@ $("#btn").click(function(){
 		 data:{
 			'id':'m004',
 			'name':'lee',
-			'age':33
+			/* 'age':33 */
 			 },
 			 success:function(result){
 				 console.log(result);
@@ -44,7 +44,7 @@ $("#btn").click(function(){
 				 console.log(obj.id);
 				 console.log(obj.name);
 				 console.log(obj.age);
-//p태그에  내용을 
+                 //p태그에  내용을 
 				 $(".name").text(obj.name);
 
 
