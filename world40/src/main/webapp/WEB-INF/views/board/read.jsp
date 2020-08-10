@@ -493,10 +493,30 @@
  
 
  
+<<<<<<< HEAD
 /* .replymodify는 동적으로 생성되었는데 이것의 상위 정적으로 생성된 애를  선택  즉#replies */
 
 			$("#replies").on("click", ".replymodify", function(){
 /* 클릭당하고 있는애 가 $(this)여기에선 .replymodify */
+=======
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+			
+
+			
+/* .replymodify는 동적으로 생성되었는데 이것의 상위 정적으로 생성된 애를  선택  즉#replies */
+			$("#replies").on("click", ".replymodify", function(){
+/* 클릭당하고 있는애가 $(this)여기에선 .replymodify */
+>>>>>>> d1b42dbfaa9d8c13fdc72b5f93aa6b5315e41e99
 				var rno = $(this).attr("data-rno");
 			
 
