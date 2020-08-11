@@ -19,12 +19,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 
-
-//수정 test22(수정!!!!!!!!!!!)
 //수정 test22
 //수정 test22
 //수정 test22
-
+//수정 test22
 
 //수정 test22
 //수정 test22
@@ -38,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 /**
+ * 
  * Handles requests for the application home page.
  */
 @Controller
